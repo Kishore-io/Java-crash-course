@@ -1,0 +1,23 @@
+package java_based.java_annotation_based_project.service;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java_based.java_annotation_based_project.configuration.AppConfig;
+import java_based.java_annotation_based_project.model.Book;
+
+
+
+public class BookService {
+
+	public static void main(String[] args) {
+	
+		
+		ApplicationContext factory=new AnnotationConfigApplicationContext(AppConfig.class);
+		
+		Book book= factory.getBean(Book.class);
+
+		System.out.println(book);
+	}
+
+}

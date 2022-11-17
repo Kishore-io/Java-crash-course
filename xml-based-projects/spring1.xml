@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<bean id="book" class="wp.xm_based.Book">
+<property name="isbn" value="50"></property>
+<property name="name" value="My First World Cup"></property>
+
+</bean>
+
+<bean id="book2" class="wp.xm_based.Book">
+<property name="isbn" value="54"></property>
+<property name="name" value="My First Match"></property>
+
+</bean>
+
+<bean id="library" class="wp.xm_based.Library" autowire="byName">
+	<property name="libraryName" value="central library"></property>
+	<property name="address" value="3-84,Karukuwada Bethapudi"></property>
+<!-- 	<property name="book" ref="book1"></property>  -->
+</bean>
+
+<bean id="book3" class="wp.xm_based.Book">
+<constructor-arg value="52"></constructor-arg>
+<constructor-arg value="My-first-tournament"></constructor-arg>
+</bean>
+
+<!-- 
+autowire-default : no autowiring 
+byType: injects the bean through setter  , requires a single matching bean else throws noUniqueBeanException
+ byName:  autowire the bean with property name, if not found injects null 
+ -->
+
+ <context:annotation-config/>  
+</beans>
+
+

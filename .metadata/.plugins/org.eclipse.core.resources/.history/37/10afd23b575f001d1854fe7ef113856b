@@ -1,0 +1,40 @@
+package com.wp.java_annotation;
+
+public class Library {
+
+	private String libraryName;
+	private Book book;
+	
+	public Library() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Library(String libraryName, Book book) {
+		super();
+		this.libraryName = libraryName;
+		this.book = book;
+	}
+
+	public String getLibraryName() {
+		return libraryName;
+	}
+
+	public void setLibraryName(String libraryName) {
+		this.libraryName = libraryName;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	@Override
+	public String toString() {
+		return "Library [libraryName=" + libraryName + ", book=" + book + "]";
+	}
+	
+	
+}

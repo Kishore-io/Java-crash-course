@@ -1,0 +1,78 @@
+package com.wp.java_annotation;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+
+public class Library {
+
+	private String libraryName;
+	@Qualifier("book2")
+	@Autowired
+	private Book book;
+	
+	@Autowired
+	private Address officeAddress;
+	@Autowired
+	private Address homeAddress;
+
+	public Address getOfficeAddress() {
+		return officeAddress;
+	}
+
+
+	public void setOfficeAddress(Address officeAddress) {
+		this.officeAddress = officeAddress;
+	}
+
+
+	public Address getHomeAddress() {
+		return homeAddress;
+	}
+
+
+	public void setHomeAddress(Address homeAddress) {
+		this.homeAddress = homeAddress;
+	}
+
+	
+	
+	
+	public Library() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public void init() {
+		System.out.println("Init method started");
+	}
+
+	public Library(String libraryName, Book book) {
+		super();
+		this.libraryName = libraryName;
+		this.book = book;
+	}
+
+	public String getLibraryName() {
+		return libraryName;
+	}
+
+	public void setLibraryName(String libraryName) {
+		this.libraryName = libraryName;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	@Override
+	public String toString() {
+		return "Library [libraryName=" + libraryName + ", book=" + book + "]";
+	}
+	
+	
+}

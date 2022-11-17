@@ -1,0 +1,5 @@
+package java_based.java_annotation_based_project.service;
+
+public class BookService {
+
+}

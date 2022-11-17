@@ -1,0 +1,34 @@
+package com.wp.java_annotation;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+@ComponentScan(basePackages = {"com.wp.java_annotation"})
+@Configuration
+public class MyAppConfig {
+	
+	@Bean(name="book2")
+	public Book getBook1() {
+		return new Book(12, "ANimal fury");
+	}
+	
+	@Bean(name="book1")
+	public Book getBook2() {
+		return new Book(13, "Plant fury");
+	}
+	
+	@Bean(name="library")
+	@Scope("prototype")
+	public Library getLibrary() {
+		Library library = new Library();
+		library.setLibraryName("Nehru Library");
+		return library;
+	}
+	
+	@Bean
+	public Address officeAddress() {
+		return new Address("Coimbatore", "Tamil Nadu");
+	}
+}

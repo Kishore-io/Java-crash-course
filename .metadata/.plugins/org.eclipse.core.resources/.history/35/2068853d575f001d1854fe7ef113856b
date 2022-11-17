@@ -1,0 +1,13 @@
+package com.wp.java_annotation;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyAppConfig {
+	
+	@Bean(name="book")
+	public Book getBean() {
+		return new Book(12, "ANimal fury");
+	}
+}

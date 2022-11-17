@@ -1,0 +1,18 @@
+
+package java_based.java_annotation_based_project.configuration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java_based.java_annotation_based_project.model.Book;
+
+
+
+@Configuration
+public class AppConfig {
+
+	@Bean
+	public Book getBook()
+	{
+		return new Book("My Last WorldCup", 55);
+	}
+}
